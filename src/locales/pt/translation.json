@@ -1,0 +1,282 @@
+{
+  "welcome": "Bem-vindo ao nosso site!",
+  "about": {
+    "historyTitle": "Nossa História",
+    "historyParagraph1": "A MULTITEL - Serviços de Telecomunicações, Lda, é uma empresa angolana que actua no mercado desde 1999, licenciada pelo INACOM para a prestação de serviços de transmissão de dados e acesso à Internet. Com accionistas como a PT Ventures, Angola Telecom e o BCI, a empresa dedica-se à oferta de soluções empresariais, consultoria, manutenção e gestão de redes de telecomunicações.",
+    "historyParagraph2": "Comprometida com o progresso tecnológico e com a satisfação dos seus clientes, a MULTITEL valoriza uma relação de proximidade, apostando num atendimento personalizado, com suporte técnico local e remoto. Conta com uma equipa qualificada, composta por mais de 100 colaboradores, e complementa os seus serviços com o apoio de parceiros estratégicos.",
+    "missionTitle": "Missão",
+    "missionText": "Contribuir para a inclusão digital e desenvolvimento das TICs no mercado através de soluções inovadoras e experiências de valor.",
+    "visionTitle": "Visão",
+    "visionText": "Ser reconhecida como um provedor de serviços integrados de excelência em Telecomunicações, Tecnologias e sistemas de informação através de relações de confiança com os clientes e parceiros.",
+    "valuesTitle": "Valores",
+    "valueInnovation": "Inovação",
+    "valueExcellence": "Excelência",
+    "valueCustomerCloseness": "Proximidade com os clientes",
+    "valueSocialResponsibility": "Responsabilidade Social",
+    "cultureTitle": "Nossa Cultura",
+    "cultureImg1Alt": "Equipe trabalhando",
+    "cultureImg2Alt": "Reunião de equipe",
+    "cultureParagraph1": "Promovemos um ambiente de trabalho colaborativo e dinamico, onde cada membro da equipa é valorizado e encorajado a partilhar as suas ideias e experiências únicas.",
+    "cultureParagraph2": "Acreditamos que o sucesso nasce da união de talentos diversos, do respeito mútuo e do compromisso com a excelência em cada projecto que abraçamos."
+  },
+  "home": {
+    "slide1": {
+      "title": "CONECTAMOS NEGÓCIOS",
+      "description": "com Fibra Óptica de verdade.",
+      "cta": "Saber Mais"
+    },
+    "slide2": {
+      "title": "SmartCity Angola",
+      "description": "O futuro de Angola passa por cidades mais organizadas e tecnológicas. SmartCity traz soluções práticas para modernizar e automatizar o espaço urbano e melhorar a vida dos cidadãos.",
+      "cta": "Saber Mais"
+    },
+    "slide3": {
+      "title": "Familia mais únida e conectada.",
+      "description": "Uma experiência única e sem limites de conectividade.",
+      "cta": "Conheça Nossos Planos"
+    }
+  },
+  "navbar": {
+    "quem_somos": "Quem Somos",
+    "servicos_e_produtos": "Serviços & Produtos",
+    "multitel_agro": "Multitel Agro",
+    "eventos": "Eventos",
+    "agro": "Multitel Agro",
+    "empresas": "Empresas",
+    "residencial": "Residencial",
+    "infraestrutura_e_conectividade": "Infraestrutura e Conectividade",
+    "fibra_optica": "Fibra Óptica",
+    "fibra_optica_desc": "Internet de alta velocidade com tecnologia de ponta",
+    "vsat": "V-Sat",
+    "vsat_desc": "Conectividade via satélite para áreas remotas",
+    "micro_onda": "Micro-Onda",
+    "micro_onda_desc": "Solução rápida e eficiente para sua empresa",
+    "microonda": "Micro-Onda",
+    "microonda_desc": "Solução rápida e eficiente para sua empresa",
+    "vpn": "VPN",
+    "vpn_desc": "Segurança e privacidade para sua rede",
+    "infraestrutura_de_rede": "Infraestrutura de Rede",
+    "infraestrutura_de_rede_desc": "Soluções completas de infraestrutura",
+    "voz_fixa": "Voz Fixa",
+    "voz_fixa_desc": "Comunicação clara e confiável",
+    "servicos_digitais": "Serviços Digitais",
+    "data_center": "Data Center",
+    "data_center_desc": "Infraestrutura de alta disponibilidade",
+    "servico_de_hosting": "Serviço de Hosting",
+    "servico_de_hosting_desc": "Hospedagem segura e escalável",
+    "servico_de_email": "Email Corporativo",
+    "servico_de_email_desc": "Email corporativo profissional",
+    "automacao_e_seguranca": "Automação e Segurança",
+    "automacao_e_seguranca_desc": "Soluções inteligentes de segurança",
+    "servicos_web": "Serviços Web",
+    "servicos_web_desc": "Desenvolvimento web personalizado",
+    "consultorias": "Consultorias",
+    "consultorias_desc": "Consultoria especializada em TI",
+    "cyber_seguranca": "Cyber Segurança",
+    "smart_city": "Smart City",
+    "voltar": "Voltar",
+    "selecione_categoria": "Selecione uma categoria para explorar os nossos serviços",
+    "solucoes_completas": "Temos soluções completas para sua empresa, desde infraestrutura até segurança digital",
+    "telefone": "923 165 200"
+  },
+  "eventos": {
+    "titulo": "Nossa História em Eventos",
+    "descricao": "Conheça os eventos e conquistas que marcaram nossa trajectória"
+  },
+  "solutions": {
+    "title": "Soluções",
+    "titleHighlight": "Que Mudam Tudo",
+    "heroDescription": "Conecte sua empresa ao futuro com tecnologia de ponta, inovação e segurança.",
+    "connectivity": {
+      "title": "Conectividade",
+      "description": "Conecte sua empresa ao futuro. Conexões rápidas, seguras e ilimitadas.",
+      "benefit1": "Internet de alta velocidade até 1Gbps",
+      "benefit2": "Conexão dedicada para sua empresa",
+      "benefit3": "Suporte técnico 24/7",
+      "benefit4": "Garantia de 99,9% de disponibilidade",
+      "benefit5": "Instalação profissional e rápida"
+    },
+    "innovation": {
+      "title": "Inovação",
+      "description": "Ideias que viram soluções, soluções que fazem seu negócio crescer.",
+      "benefit1": "Consultoria especializada em transformação digital",
+      "benefit2": "Implementação de tecnologias emergentes",
+      "benefit3": "Treinamento de equipes",
+      "benefit4": "Suporte contínuo",
+      "benefit5": "Análise de resultados"
+    },
+    "digitotal": {
+      "title": "Digitotal",
+      "description": "Digitalize seu negócio com soluções inteligentes, tudo que sua empresa precisa para ser 100% digital.",
+      "benefit1": "Proteção contra ataques cibernéticos",
+      "benefit2": "Monitoramento 24/7",
+      "benefit3": "Backup automático de dados",
+      "benefit4": "Firewall avançado",
+      "benefit5": "Atualizações regulares de segurança"
+    },
+    "cybersecurity": {
+      "title": "Cibersegurança",
+      "description": "Proteção forte para os dados e o futuro da sua empresa.",
+      "benefit1": "Proteção contra ataques cibernéticos",
+      "benefit2": "Monitoramento 24/7",
+      "benefit3": "Backup automático de dados",
+      "benefit4": "Firewall avançado",
+      "benefit5": "Atualizações regulares de segurança"
+    },
+    "fiberEnterprise": {
+      "title": "Fiber Empresarial",
+      "description": "1 Gbps (expansível)",
+      "promotion": "Grandes Empresas e Grupos Empresariais",
+      "benefit1": "Link dedicado com SLA de 99,9%",
+      "benefit2": "Segurança de rede gerenciada (firewall, antivírus corporativo)",
+      "benefit3": "Suporte técnico personalizado com gestor de conta",
+      "advantage1": "Perfeito para operações com vários departamentos e filiais",
+      "advantage2": "Tráfego prioritário para videoconferências e backups em nuvem",
+      "advantage3": "Serviço escalável conforme a necessidade da empresa"
+    },
+    "proOffice": {
+      "title": "Pro Office",
+      "description": "Soluções completas para Pequenas Empresas",
+      "benefit1": "Wi-Fi de alto desempenho incluso",
+      "benefit2": "IP dinamico com opção de IP fixo",
+      "benefit3": "Suporte técnico prioritário com tempo de resposta de até 6 horas",
+      "advantage1": "Recomendado para escritórios com até 10 colaboradores",
+      "advantage2": "Permite uso simultâneo de plataformas online, softwares de faturação, CRM, etc.",
+      "advantage3": "Internet móvel (4G) inclusa como backup"
+    },
+    "smartBiz": {
+      "title": "SmartBiz",
+      "description": "Empresas em crescimento",
+      "benefit1": "Velocidade simétrica (download e upload iguais)",
+      "benefit2": "IP fixo incluso",
+      "benefit3": "Suporte técnico 24/7",
+      "advantage1": "Ideal para equipes híbridas (presencial e remoto)",
+      "advantage2": "Perfeito para atendimento online, e-commerce e servidores internos",
+      "advantage3": "Suporte técnico rápido, com visitas presenciais sempre que necessário"
+    },
+    "powerNet": {
+      "title": "PowerNet",
+      "description": "Empresas de Médio Porte",
+      "benefit1": "Link dedicado com banda garantida",
+      "benefit2": "Gestão remota de rede inclusa",
+      "benefit3": "Monitoramento contínuo 24/7",
+      "advantage1": "Ideal para ambientes com muitos dispositivos conectados",
+      "advantage2": "Estabilidade garantida para sistemas de gestão (ERP), chamadas VoIP e plataformas internas",
+      "advantage3": "Consultoria técnica trimestral para otimização da rede"
+    },
+    "startUP": {
+      "title": "StartUP",
+      "description": "Microempresas e Startups",
+      "benefit1": "Conexão estável para pequenas equipes (até 5 pessoas)",
+      "benefit2": "Instalação gratuita",
+      "benefit3": "Suporte técnico das 8h às 20h (dias úteis)",
+      "advantage1": "Ideal para videoconferências, redes sociais e ferramentas como Google Workspace e Zoom",
+      "advantage2": "Preço acessível e plano mensal flexível",
+      "advantage3": "Opção de upgrade conforme a empresa cresce"
+    },
+    "consultNow": "Consultar Agora",
+    "muchMoreThanSolutions": "Muito mais que soluções,",
+    "weDeliverStrategy": "entregamos estratégia."
+  },
+  "seguranca": {
+    "hero": {
+      "title": "Segurança da Informação Completa",
+      "subtitle": "Mantenha a sua empresa segura com soluções avançadas."
+    },
+    "services": {
+      "cloud": {
+        "title": "Segurança em Nuvem",
+        "description": "Protecção completa dos seus activos na nuvem, garantindo conformidade e segurança em ambientes AWS, Azure e Google Cloud."
+      },
+      "mobile": {
+        "title": "Segurança Mobile",
+        "description": "Soluções de segurança personalizadas para dispositivos móveis, protegendo os dados da empresa em smartphones e tablets."
+      },
+      "outsourcing": {
+        "title": "Outsourcing",
+        "description": "Equipa experiente em segurança da informação disponível para si, ajudando a reduzir custos e a aumentar a eficiência."
+      },
+      "network": {
+        "title": "Segurança de Rede",
+        "description": "Protecção total da infra-estrutura de rede, com firewalls, IDS/IPS e monitorização 24/7."
+      },
+      "endpoint": {
+        "title": "Segurança Endpoint",
+        "description": "Protecção avançada de todos os dispositivos, prevenindo ameaças e malwares em tempo real."
+      },
+      "recovery": {
+        "title": "Plano de Recuperação Tecnológico",
+        "description": "Estratégias e soluções para garantir a continuidade do seu negócio mesmo perante incidentes de segurança."
+      },
+      "data": {
+        "title": "Segurança de Dados",
+        "description": "Protecção e gestão de dados sensíveis, assegurando conformidade com a Lei de Protecção de Dados e outras normas aplicáveis."
+      },
+      "forensics": {
+        "title": "Análise Forense",
+        "description": "Investigação detalhada de incidentes de segurança, com recolha e análise de evidências digitais."
+      },
+      "pentesting": {
+        "title": "Pentesting",
+        "description": "Testes de penetração completos para identificar vulnerabilidades antes que sejam exploradas."
+      },
+      "training": {
+        "title": "Treinamento",
+        "description": "Formação em segurança da informação para a sua equipa, promovendo uma cultura de protecção digital."
+      },
+      "app": {
+        "title": "Segurança Aplicacional",
+        "description": "Análise e protecção de aplicações web e móveis, assegurando um desenvolvimento seguro desde a base."
+      },
+      "controls": {
+        "title": "Criação e Avaliação de Controlos",
+        "description": "Implementação e avaliação de medidas de segurança alinhadas às boas práticas do mercado."
+      },
+      "dashboards": {
+        "title": "Criação de Dashboards Interactivos",
+        "description": "Visualização clara e interactiva de métricas de segurança para uma tomada de decisão bem informada."
+      },
+      "policies": {
+        "title": "Criação de Normas e Políticas",
+        "description": "Desenvolvimento de políticas de segurança ajustadas às necessidades do seu negócio."
+      },
+      "cloud_assessment": {
+        "title": "Avaliação de Segurança na Cloud",
+        "description": "Análise detalhada da segurança na nuvem, identificando riscos e propondo melhorias."
+      },
+      "info_security": {
+        "title": "Soluções de Segurança da Informação",
+        "description": "Implementação de soluções de segurança da informação integradas e adaptadas à realidade do seu negócio."
+      },
+      "pen_tests": {
+        "title": "Testes de Penetração",
+        "description": "Avaliação minuciosa de vulnerabilidades através de testes de invasão controlados e éticos."
+      },
+      "risk_management": {
+        "title": "Gestão de Riscos",
+        "description": "Identificação, análise e mitigação de riscos de segurança para proteger os seus activos essenciais."
+      }
+    },
+    "cta": {
+      "title": "Pronto para reforçar a segurança do seu negócio?",
+      "subtitle": "Entre em contacto com a nossa equipa e descubra as soluções mais adequadas para proteger o seu negócio.",
+      "button": "Solicitar Consultoria"
+    }
+  },
+  "footer": {
+    "contactTitle": "Contacto",
+    "usefulLinksTitle": "Links Úteis",
+    "suggestions": "Sugestões",
+    "socialAction": "Acção Social",
+    "careers": "Carreiras",
+    "supportTitle": "Suporte",
+    "helpCenter": "Central de Ajuda",
+    "customerPortal": "Portal do Cliente",
+    "followUs": "Siga-nos",
+    "rightsReserved": "Todos os direitos reservados a",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "acceptableUsePolicy": "Política de Uso Aceitável"
+  }
+} 
+

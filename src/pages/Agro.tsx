@@ -13,7 +13,12 @@ function Agro() {
       {/* Hero Section */}
       <div
         className="w-full h-[400px] bg-cover bg-center"
-        style={{ backgroundImage: "url('/public/home/Capa_Apresentação_Angotic.jpg')" }}
+        style={{
+          backgroundImage: "url('/home/Capa_Apresentação_Angotic - Cópia.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "right",
+          backgroundRepeat: "no-repeat"
+        }}
       />
 
       {/* Destaques de Inovação */}

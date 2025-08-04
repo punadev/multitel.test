@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Wifi, ShieldCheck, Rocket, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ServiceModal } from './ServiceModal';
@@ -8,14 +8,49 @@ export function Solutions() {
   const { t } = useTranslation();
   const [activeCard, setActiveCard] = useState(0);
   const [selectedService, setSelectedService] = useState(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const containerRef = useRef(null);
+
+  const checkScrollPosition = () => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      setCanScrollLeft(container.scrollLeft > 0);
+      setCanScrollRight(container.scrollLeft < container.scrollWidth - container.clientWidth - 1);
+    }
+  };
 
   const scrollToCard = (direction) => {
     if (containerRef.current) {
+      const container = containerRef.current;
       const scrollAmount = direction === 'left' ? -400 : 400;
-      containerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      
+      // Verificar se o scroll é possível
+      if (direction === 'left' && container.scrollLeft <= 0) {
+        return; // Não pode recuar mais
+      }
+      
+      if (direction === 'right' && container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+        return; // Não pode avançar mais
+      }
+      
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      
+      // Verificar a posição após o scroll
+      setTimeout(checkScrollPosition, 500);
     }
   };
+
+  // Verificar posição inicial e adicionar event listener
+  useEffect(() => {
+    checkScrollPosition();
+    
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('scroll', checkScrollPosition);
+      return () => container.removeEventListener('scroll', checkScrollPosition);
+    }
+  }, []);
 
   const services = [
     {
@@ -154,13 +189,15 @@ export function Solutions() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white"
+        className="text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border border-gray-200 h-full flex flex-col justify-between"
         tabIndex={0}
         aria-label={title}
       >
-        {icon}
-        <p className="font-semibold text-lg mb-3">{title}</p>
-        <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+        <div className="flex flex-col items-center">
+          {icon}
+          <p className="font-semibold text-lg mb-3">{title}</p>
+          <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+        </div>
       </motion.div>
     );
   }
@@ -230,7 +267,7 @@ export function Solutions() {
           className="flex flex-col lg:flex-row gap-12 items-start"
         >
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-stretch">
             {services.map((item, index) => (
               <ServiceCard key={index} icon={item.icon} title={item.title} description={item.description} />
             ))}
@@ -257,14 +294,15 @@ export function Solutions() {
 
           {/* Navigation Buttons and Cards Container */}
           <div className="relative mt-16">
-            <motion.button
-             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-blue-50 p-4 rounded-full shadow-lg transition-all border border-gray-100"
-            >
-              <ChevronLeft className="w-6 h-6 text-blue-800" />
-            </motion.button>
+            {canScrollLeft && (
+              <button
+                onClick={() => scrollToCard('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-50 bg-white hover:bg-blue-50 p-4 rounded-full shadow-lg transition-colors border border-gray-100"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="w-6 h-6 text-blue-800" />
+              </button>
+            )}
 
             <div
               ref={containerRef}
@@ -276,14 +314,15 @@ export function Solutions() {
               ))}
             </div>
 
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => scrollToCard('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-blue-50 p-4 rounded-full shadow-lg transition-all border border-gray-100"
-            >
-              <ChevronRight className="w-6 h-6 text-blue-800" />
-            </motion.button>
+            {canScrollRight && (
+              <button
+                onClick={() => scrollToCard('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-50 bg-white hover:bg-blue-50 p-4 rounded-full shadow-lg transition-colors border border-gray-100"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-6 h-6 text-blue-800" />
+              </button>
+            )}
           </div>
         </div>
       </section>

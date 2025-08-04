@@ -7,9 +7,7 @@ function Seguranca() {
   return (
     <footer className="bg-gradient-to-r from-primary-dark via-primary to-accent py-12 text-white border-t-4 border-primary shadow-2xl">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="flex justify-center items-center mb-6">
-          <img src="/logo.svg" className="w-60 md:w-60 lg:w-[300px] h-auto mx-auto" alt="Logo Multitel" />
-        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center text-center md:justify-items-start md:text-left">
 
            {/* Contact */}
@@ -63,12 +61,12 @@ function Seguranca() {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              {new Date().getFullYear()} | {t('footer.rightsReserved')} <a href='/' className="hover:text-accent">Multitel</a>.
+            {new Date().getFullYear()} | {t('footer.rightsReserved')} <a href='/' className="hover:text-accent">Multitel</a>.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-white/50 hover:text-accent text-sm transition-colors">{t('footer.privacyPolicy')}</a>
-              <a href="#" className="text-white/50 hover:text-accent text-sm transition-colors">{t('footer.termsOfService')}</a>
-              <a href="#" className="text-white/50 hover:text-accent text-sm transition-colors">{t('footer.acceptableUsePolicy')}</a>
+            <div className="flex justify-center items-center mb-6">
+              <img src="/logo.svg" className="w-60 md:w-60 lg:w-[200px] h-auto mx-auto" alt="Logo Multitel" />
+            </div>
             </div>
           </div>
         </div>

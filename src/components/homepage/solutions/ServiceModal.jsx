@@ -7,6 +7,85 @@ export function ServiceModal({ isOpen, onClose, service }) {
 
   const [sent, setSent] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+  
+  // Estados para os campos do formulário
+  const [formData, setFormData] = useState({
+    company: '',
+    name: '',
+    email: '',
+    phone: ''
+  });
+  
+  // Estados para validação
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Função para validar os campos
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.company.trim()) {
+      newErrors.company = 'Nome da empresa é obrigatório';
+    }
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Nome completo é obrigatório';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'E-mail é obrigatório';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'E-mail inválido';
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Telefone é obrigatório';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Função para lidar com mudanças nos campos
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+    
+    // Limpar erro do campo quando o usuário começa a digitar
+    if (errors[id]) {
+      setErrors(prev => ({
+        ...prev,
+        [id]: ''
+      }));
+    }
+  };
+
+  // Função para enviar o formulário
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (validateForm()) {
+      setIsSubmitting(true);
+      
+      // Simular envio (substitua por sua lógica real de envio)
+      setTimeout(() => {
+        setSent(true);
+        setShowThankYou(true);
+        setIsSubmitting(false);
+        // Resetar formulário
+        setFormData({
+          company: '',
+          name: '',
+          email: '',
+          phone: ''
+        });
+        setErrors({});
+      }, 1000);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -86,11 +165,7 @@ export function ServiceModal({ isOpen, onClose, service }) {
               {sent ? null : (
                 <form
                   className="space-y-4"
-                  onSubmit={e => {
-                    e.preventDefault();
-                    setSent(true);
-                    setShowThankYou(true);
-                  }}
+                  onSubmit={handleSubmit}
                 >
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -100,9 +175,16 @@ export function ServiceModal({ isOpen, onClose, service }) {
                       <input
                         type="text"
                         id="company"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Digite o nome da sua empresa"
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                          errors.company 
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                            : 'border-gray-300'
+                        }`}
+                        placeholder="Nome da sua empresa"
+                        value={formData.company}
+                        onChange={handleInputChange}
                       />
+                      {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company}</p>}
                     </div>
 
                     <div>
@@ -112,9 +194,16 @@ export function ServiceModal({ isOpen, onClose, service }) {
                       <input
                         type="text"
                         id="name"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Digite seu nome completo"
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                          errors.name 
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                            : 'border-gray-300'
+                        }`}
+                        placeholder="Seu nome"
+                        value={formData.name}
+                        onChange={handleInputChange}
                       />
+                      {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                     </div>
                   </div>
 
@@ -126,9 +215,16 @@ export function ServiceModal({ isOpen, onClose, service }) {
                       <input
                         type="email"
                         id="email"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Digite seu e-mail"
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                          errors.email 
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                            : 'border-gray-300'
+                        }`}
+                        placeholder="Seu e-mail"
+                        value={formData.email}
+                        onChange={handleInputChange}
                       />
+                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                     </div>
 
                     <div>
@@ -138,34 +234,70 @@ export function ServiceModal({ isOpen, onClose, service }) {
                       <input
                         type="tel"
                         id="phone"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                          errors.phone 
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                            : 'border-gray-300'
+                        }`}
                         placeholder="Digite seu telefone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                       />
+                      {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                    className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-blue-600 hover:bg-blue-700 text-white'
+                    }`}
+                    disabled={isSubmitting}
                   >
-                    Enviar Solicitação
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Enviando...
+                      </div>
+                    ) : (
+                      'Enviar Solicitação'
+                    )}
                   </button>
                 </form>
               )}
 
               {/* Modal de agradecimento */}
               {showThankYou && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40">
-                  <div className="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full text-center">
-                    <div className="text-green-700 font-semibold text-lg mb-4">
-                      Obrigado, a nossa equipa comercial entrará em contacto com o senhor
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm animate-fadeIn">
+                  <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 transform animate-scaleIn border border-gray-100">
+                    <div className="flex flex-col items-center">
+                      {/* Success Icon */}
+                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                        OBRIGADO
+                      </h3>
+                      
+                      {/* Message */}
+                      <p className="text-gray-600 text-center leading-relaxed mb-8">
+                        Obrigado, a nossa equipa comercial entrará em contacto.
+                      </p>
+                      
+                      {/* Button */}
+                      <button
+                        className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold"
+                        onClick={() => setShowThankYou(false)}
+                      >
+                        Entendido
+                      </button>
                     </div>
-                    <button
-                      className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                      onClick={() => setShowThankYou(false)}
-                    >
-                      OK
-                    </button>
                   </div>
                 </div>
               )}

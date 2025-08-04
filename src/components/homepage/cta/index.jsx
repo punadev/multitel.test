@@ -70,11 +70,8 @@ export function Cta() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center text-gray-600">
-                <Phone className="h-5 w-5 mr-2" /> <a href="tel:244222 204 200">(+244) 222 204 200</a>
-              </div>
-              <div className="flex items-center text-gray-600">
-                <Mail className="h-5 w-5 mr-2" /> <a href="mailto:suporte@multitel.co.ao">suporte@multitel.co.ao</a>
-                <Mail className="h-5 w-5 ml-4 mr-2" /> <a href='mailto:vendas@multitel.co.ao'>vendas@multitel.co.ao</a>
+                <Phone className="h-5 w-5 mr-2" /> <a href="tel:244222 204 200">(+244) 923 165 200</a>
+                <Phone className="h-5 w-5 ml-5 mr-2" /> <a href="tel:244222 204 200">(+244) 222 204 200</a>
               </div>
               <div className="flex items-center text-gray-600">
                 <MapPin className="h-5 w-5 mr-2" /> Rua Cristiano dos Santos, nº 5 Bairro Miramar, Distrito Urbano do Sambizanga

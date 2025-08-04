@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Users, Award, Mic, Globe, BookOpen, Store } from 'lucide-react';
+import { Calendar, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { events } from './../../data/events';
 import { useTranslation } from 'react-i18next';
@@ -11,12 +11,6 @@ interface EventType {
   date: string;
   location: string;
   images: string[];
-}
-
-interface EventSectionProps {
-  title: string;
-  events: EventType[];
-  icon: React.ElementType;
 }
 
 function EventCard({ event }: { event: EventType }) {
@@ -47,24 +41,17 @@ function EventCard({ event }: { event: EventType }) {
   );
 }
 
-function EventSection({ title, events, icon: Icon }: EventSectionProps) {
-  return (
-    <div className="mb-12">
-      <div className="flex items-center mb-6">
-        <Icon className="w-6 h-6 mr-2 text-blue-600" />
-        <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {events.map((event: EventType) => (
-          <EventCard key={event.id} event={event} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function EventsHome() {
   const { t } = useTranslation();
+  
+  // Combinar todos os eventos em uma única lista
+  const allEvents = [
+    ...events.conferences,
+    ...events.exhibitions,
+    ...events.workshops,
+    ...events.awards
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-blue-600 text-white py-12">
@@ -77,26 +64,11 @@ function EventsHome() {
       </header>
 
       <main className="container mx-auto px-4 py-12">
-        <EventSection 
-          title="Conferências" 
-          events={events.conferences} 
-          icon={Mic}
-        />
-        <EventSection 
-          title="Feiras e Exposições" 
-          events={events.exhibitions} 
-          icon={Store}
-        />
-        <EventSection 
-          title="Workshops" 
-          events={events.workshops} 
-          icon={BookOpen}
-        />
-        <EventSection 
-          title="Premiações" 
-          events={events.awards} 
-          icon={Award}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {allEvents.map((event: EventType) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
       </main>
     </div>
   );

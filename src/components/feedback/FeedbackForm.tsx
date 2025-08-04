@@ -45,7 +45,7 @@ const FeedbackForm: React.FC = () => {
     }
 
     if (formData.customerType === 'b2b' && !formData.companyName.trim()) {
-      newErrors.companyName = 'Please enter your company name';
+      newErrors.companyName = 'Por favor digite nome da sua empresa';
     }
     
     setErrors(newErrors);
@@ -180,7 +180,7 @@ const FeedbackForm: React.FC = () => {
                 value={formData.companyName}
                 onChange={handleChange}
                 error={errors.companyName}
-                placeholder="Enter your company name"
+                placeholder="Nome da sua empresa"
               />
             )}
           
@@ -232,12 +232,8 @@ const FeedbackForm: React.FC = () => {
               >
                 <option value="">-- Seleciona o tipo de feedback --</option>
                 <option value="sugestao">Feedback Geral</option>
-                <option value="sugestao">Sugestão</option>
-                <option value="elogio">Elogio</option>
-                <option value="reclamacao">Reclamação</option>
                 <option value="dificuldade_tecnica">Dificuldade Técnica</option>
                 <option value="atendimento">Avaliação do Atendimento</option>
-                <option value="qualidade_servico">Qualidade do Serviço</option>
                 <option value="preco_tarifas">Preço e Tarifas</option>
                 <option value="outros">Outros</option>
               </select>

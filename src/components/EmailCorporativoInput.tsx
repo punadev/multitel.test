@@ -56,8 +56,8 @@ const EmailCorporativoInput: React.FC<EmailCorporativoInputProps> = ({
       />
       {showEmailMsg && (
         <div className="text-red-600 text-sm bg-red-50 border border-red-200 rounded p-3 mb-2">
-          Precisas criar um email corporativo para sua empresa, com isso atrais mais clientes e garantes confiança quem negocia contigo,{' '}
-          <a href="/servico-email" className="text-blue-600 underline font-semibold">clica aqui para ter um email corporativo</a>
+          Crie um email corporativo para garantir maior confiança para sua empresa. {' '}
+          <a href="/servico-email" className="text-blue-600 underline font-semibold">Click aqui para ter um email corporativo</a>
         </div>
       )}
     </>
